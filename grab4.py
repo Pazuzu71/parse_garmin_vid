@@ -8,8 +8,8 @@ import time
 
 async def generate_urls():
     urls = []
-    for k in range(1, 2):
-        for i in range(30):
+    for k in range(11):
+        for i in range(1000):
             for j in "ABCDE":
                 if i < 10:
                     num = f'00{i}'
@@ -25,7 +25,8 @@ async def generate_urls():
 async def fetch_status(url: str):
     ua = UserAgent()
     headers = {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,'
+                  'application/signed-exchange;v=b3;q=0.9',
         'User-Agent': ua.random
     }
     async with ClientSession() as session:
